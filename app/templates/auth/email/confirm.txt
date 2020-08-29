@@ -1,0 +1,13 @@
+用户： {{ user.username }},您好！
+
+感谢您注册驾考租车网!
+
+要确认您的链接请点击如下链接:
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+真诚地,
+
+驾考租车团队
+
+提示: 此邮件为系统自动发送，请勿回复！

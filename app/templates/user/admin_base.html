@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block Content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 list-group">
+				<p class="list-group-item active">文章管理</p>
+				<a class="list-group-item" href="{{ url_for('user.submitArticles') }}">发表信息</a>
+				<a class="list-group-item" href="{{ url_for('user.manage_articles') }}">管理已发布信息</a>
+                <p class="list-group-item active">其它管理</p>
+				<a class="list-group-item" href="{{ url_for('user.account') }}">用户账户</a>
+        </div>
+        <div class="col-md-10">
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+                <div class="alert alert-{{category}} alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+            {% block admin_content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+    {{ super() }}
+    <script src="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/js/admin.js"></script>
+{% endblock %}

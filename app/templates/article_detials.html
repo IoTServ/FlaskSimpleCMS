@@ -1,0 +1,47 @@
+{% extends 'article_base.html' %}
+{% block title %}驾考租车，找驾校，驾考陪练-{{ article.title }}{% endblock %}
+{% block meta %}{{ super() }}{% if article.mprovince %}<meta name="location" content="province={{ article.mprovince }};city={{ article.mcity }};coord={{ article.lng }},{{ article.lat }}">{% endif %}{% endblock %}
+{% block content %}
+<div id='article-detials' class="list-group-item">
+    <article>
+        {% include '_article_info.html' %}
+        <div>
+            <p>
+                {{ article.content | safe }}
+            </p>
+        </div>
+        <div class="article-add-info">
+            <p>
+                <span class="glyphicon glyphicon-time">
+                    文章最后更新时间：
+                </span>
+                {% if article.update_time %}
+                <time>{{ moment(article.update_time.replace(microsecond=0)).format('LLL') }}</time>
+                {% else %}
+                    未知时间
+                {% endif %}
+            </p>
+        </div>
+    </article>
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a></div>
+    <hr>
+    {% if article.can_comment %}
+    <!-- 畅言评论框 start -->
+	<div id="SOHUCS" sid="{{ id }}" ></div>
+    <!-- 畅言评论框 end -->
+    {% endif %}
+</div>
+{% endblock %}
+{% block script %}{{ super() }}
+{{ moment.include_moment(local_js='//apps.bdimg.com/libs/moment/2.8.3/moment-with-locales.min.js') }}
+<script src="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/js/bd-share.js"></script>
+<!-- 畅言评论框 start -->
+<script type="text/javascript">
+(function(){
+var appid = 'cyt328rtp';
+var conf = 'prod_544c23a74816467c1dbd441e3630b817';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+</script>
+{{ moment.lang('zh-cn') }}{% endblock %}

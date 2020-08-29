@@ -1,0 +1,13 @@
+User-agent: Baiduspider
+Disallow: /user/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /static/
+User-agent: *
+Disallow: /user/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /static/
+Disallow: /mip/
+
+Sitemap: http://www.jiakaozuche.com/sitemap.xml

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sitemapindex>
+    {% for article_sitemap_id in range(1,article_sitemap_num) %}
+    <sitemap>
+        <loc>{{ url_for('main.sitemap', page=article_sitemap_id, _external=True) }}</loc>
+        <lastmod>{{ time }}</lastmod>
+    </sitemap>
+    {% endfor %}
+    {% for user_sitemap_id in range(1,user_sitemap_num) %}
+    <sitemap>
+        <loc>{{ url_for('main.user_sitemap', page=user_sitemap_id, _external=True) }}</loc>
+        <lastmod>{{ time }}</lastmod>
+    </sitemap>
+    {% endfor %}
+</sitemapindex>

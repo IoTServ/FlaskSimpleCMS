@@ -1,0 +1,62 @@
+{% extends 'mip/base.html' %}
+{% import "mip/_macros.html" as macros %}
+{% block link %}
+{% if page == 1 %}
+    <meta name="description" content="驾考租车网专业提供驾考信息，汇聚全国驾校信息，科目二陪练、科目三陪练信息。">
+    <meta name="keywords" content="驾考租车，科二陪练，科三陪练，驾考陪练，驾校,学车,考驾照,驾校网,学车网,驾校排名,驾校查询,驾校点评,驾校口碑">
+    <link rel="canonical" href="{{ url_for('main.index', _external=True) }}">
+{% else %}
+    <link rel="canonical" href="{{ url_for('main.index', page=page, _external=True) }}">
+{% endif %}
+{% endblock %}
+{% block content %}
+    {% include "mip/_article_entry.html" %}
+    <div>
+    {% if endpoint == '.mipindex' %}
+        {{ macros.pagination_widget(pagination, endpoint) }}
+    {% else %}
+        {{ macros.pagination_widget(pagination, endpoint, id=id) }}
+    {% endif %}
+    </div>
+    <div class="list-group-item">
+        <p class="list-group-item">
+            <span><a href="{{ url_for('mip.mipcity',word='北京', _external=True) }}">北京</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='上海', _external=True) }}">上海</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='广州', _external=True) }}">广州</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='深圳', _external=True) }}">深圳</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='天津', _external=True) }}">天津</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='哈尔滨', _external=True) }}">哈尔滨</a></span>&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='苏州', _external=True) }}">苏州</a></span>
+        </p>
+        <p class="list-group-item">
+            <span><a href="{{ url_for('mip.mipcity',word='重庆', _external=True) }}">重庆</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='杭州', _external=True) }}">杭州</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='武汉', _external=True) }}">武汉</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='南京', _external=True) }}">南京</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='成都', _external=True) }}">成都</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='昆明', _external=True) }}">昆明</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='青岛', _external=True) }}">青岛</a></span>
+        </p>
+        <p class="list-group-item">
+            <span><a href="{{ url_for('mip.mipcity',word='大连', _external=True) }}">大连</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='宁波', _external=True) }}">宁波</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='无锡', _external=True) }}">无锡</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='沈阳', _external=True) }}">沈阳</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='济南', _external=True) }}">济南</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='福州', _external=True) }}">福州</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='厦门', _external=True) }}">厦门</a></span>
+        </p>
+        <p class="list-group-item">
+            <span><a href="{{ url_for('mip.mipcity',word='西安', _external=True) }}">西安</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='长沙', _external=True) }}">长沙</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='东莞', _external=True) }}">东莞</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='郑州', _external=True) }}">郑州</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='佛山', _external=True) }}">佛山</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='芜湖', _external=True) }}">芜湖</a></span>&nbsp;&nbsp;&nbsp;
+            <span><a href="{{ url_for('mip.mipcity',word='合肥', _external=True) }}">合肥</a></span>
+        </p>
+        <p class="list-group-item">
+            <span><a href="{{ url_for('mip.mipplace', _external=True) }}">更多...</a></span>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+    {% block title %}注册驾考租车网{% endblock %}
+{% block stylesheet %}
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/common.css') }}" rel="stylesheet">
+{% endblock %}
+{% block Content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-lg-offset-4">
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+                <div class="alert alert-{{ category }} alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <h3 class="text-center">欢迎注册驾考租车网</h3>
+            <form class="form-horizontal" role="form" method="post" action="{{ url_for('auth.register') }}">
+                {{ form.csrf_token }}
+                <div class="form-group">
+                    {{ form.email.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                            {{ form.email(class='form-control', placeholder='请输入您的电子邮件', required='') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.qq.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            {{ form.qq(class='form-control', placeholder='请输入您的QQ号(数字)', required='') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.tel.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+                            {{ form.tel(class='form-control', placeholder='请输入您的手机号(数字)', required='') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.wechat.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            {{ form.wechat(class='form-control', placeholder='请输入您的微信号', required='') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.comname.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                            {{ form.comname(class='form-control', placeholder='请输入您的公司名，个人可不填') }}
+                        </div>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    {{ form.username.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            {{ form.username(class='form-control', placeholder='请输入您的昵称', required='') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            {{ form.password(class='form-control', placeholder='请输入您的密码', required='') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.password2.label(class='col-sm-3 control-label') }}
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            {{ form.password2(class='form-control', placeholder='请再次输入您的密码', required='') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div id="embed-captcha"></div>
+                        <p id="wait" class="show">正在加载验证码......</p>
+                        <p id="notice" class="hide" style="color: red">请先拖动验证码到相应位置</p>
+                        <br>
+                        <button type="submit" class="btn btn-success" id="embed-submit">注册</button><span>已经有账号？</span><span><a href="{{ url_for('auth.login') }}">登录</a></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{{ url_for('static', filename='js/jquery-2.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<script src="{{ url_for('static', filename='js/geetest_setup.js') }}"></script>
+{% endblock %}

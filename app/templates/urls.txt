@@ -1,0 +1,1 @@
+{% for page in pages %}{{page[0]+'\r\n'|safe}}{% endfor %}
