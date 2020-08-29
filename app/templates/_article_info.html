@@ -1,0 +1,36 @@
+<div class="article-entry-header">
+    <h3 class="article-entry-title">
+        <a href="{{ url_for('main.articleDetails', id=article.id) }}">{{ article.title }}</a>
+    </h3>
+</div>
+
+<div class="article-entry-info">
+    <div class="base-info">
+        <span class="label label-info">
+            <a href="{{ url_for('main.articleTypes', id=article.articleType.id) }}" target="_blank" style="color: white">
+                类型：{{ article.articleType.name }}
+            </a>
+        </span>
+    </div>
+    <div class="main-info">
+        <span class="label label-primary"><a href="{{ url_for('username.detials', id=article.author.id) }}" target="_blank" style="color: white">
+                联系我：{{ article.callname }}
+            </a></span>
+    </div>
+</div>
+
+<div class="article-entry-sum">
+    <ul class="list-group">
+        <li style="width:40%;margin:3px;display:inline-block;"><em style="color: #008cba;font-style: normal;">城市：</em>{% if article.city %}<a href="{{ url_for('main.city', word=article.city) }}">{{ article.city or '未知' }}</a>{% else %}{{ article.city or '未知' }}{% endif %}</li>
+        <li style="width:40%;margin:3px;display:inline-block;"><em style="color: #008cba;font-style: normal;">服务价格：</em>{{ article.price or '询价' }}</li>
+        <hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+        <li style="width:40%;margin:3px;display:inline-block;"><em style="color: #008cba;font-style: normal;">电话：</em>{{ article.tel or '未知' }}</li>
+        <li style="width:40%;margin:3px;display:inline-block;"><em style="color: #008cba;font-style: normal;">证照类型：</em>{{ article.driverType.name or '未知' }}</li>
+        <hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+        <li style="width:40%;margin:3px;display:inline-block;"><em style="color: #008cba;font-style: normal;">详细地址：</em>{{ article.detailplace or '未知' }}</li>
+        {% if article.author_id==1 %}
+        <li style="width:40%;margin:3px;display:inline-block;"><em style="color: #008cba;font-style: normal;">我要认领：</em><a href="{{ url_for('user.reclaim', id=article.id) }}">认领</a></li>
+        {% endif %}
+        <hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+    </ul>
+</div>

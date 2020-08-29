@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}驾考租车网 - {{ user.username }}的主页{% endblock %}
+
+{% block content %}
+<div>
+    <h2>
+        {{ user.username }}主页
+    </h2>
+    <hr>
+    <div>
+        <table>
+            <tr>
+                <td width="128" valign="top" align="center">
+                <img border="0" src="{{ user.gravatar(size=128) }}" height="128" width="128">
+                </td>
+                <td width="10"></td>
+                <td width="auto" valign="top" align="left" style="color: #999">
+                    <h4>昵称:{{ user.username }}</h4>
+                    <h5>联系电话：</h5>
+                    <h4 class="email">{{ user.tel }}</h4>
+                    <h5>最后一次签到日期：</h5>
+                    <h4 class="email"><time>{{ user.sign_date }}</time></h4>
+                </td>
+                <td width="10"></td>
+                <td width="128" valign="top" align="center">
+                <img border="0" src="{{ url_for('username.qrcode',id=id) }}" height="128" width="128">
+                    <p>我的二维码名片</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div>
+        <h2>发布的信息</h2>
+    </div>
+
+    {% import "_macros.html" as macros %}
+    {% include "_article_entry.html" %}
+    <div class="pagination">
+    {% if endpoint == '.index' %}
+        {{ macros.pagination_widget(pagination, endpoint) }}
+    {% else %}
+        {{ macros.pagination_widget(pagination, endpoint, id=id) }}
+    {% endif %}
+    </div>
+</div>
+    <h4>咨询请留言：</h4>
+    <hr>
+    <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="用户{{ user.id }}" data-title="{{ user.username }}的主页" data-url="//www.jiakaozuche.com/zhuye/{{ user.id }}"></div>
+    <!-- 多说评论框 end -->
+{% endblock %}
+
+{% block script %}
+    {{ super() }}
+    {{ moment.include_moment(local_js='//apps.bdimg.com/libs/moment/2.8.3/moment-with-locales.min.js') }}
+    <script src="{{ url_for('static', filename='js/bd-share.js') }}"></script>
+    {{ moment.lang('zh-cn') }}
+{% endblock %}

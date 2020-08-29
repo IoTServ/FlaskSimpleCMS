@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html mip>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>{% block title %}驾考租车网-找驾校，找陪练，驾照自考，科二租车，科三租车{% endblock %}</title>
+    {% block link %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="shortcut icon" href="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/images/favicon.ico" type="image/x-icon" />
+    <style mip-custom>
+        ul.digg {PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px;MARGIN: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center}ul.digg li {BORDER-RIGHT: #aaaadd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaaadd 1px solid;PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px;BORDER-LEFT: #aaaadd 1px solid; COLOR: #000099; PADDING-TOP: 2px;BORDER-BOTTOM: #aaaadd 1px solid; TEXT-DECORATION: none}ul.digg li:hover {BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid;BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid}ul.digg li:active {BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid;BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid}ul.digg li.current {BORDER-RIGHT: #000099 1px solid; PADDING-RIGHT: 5px;BORDER-TOP: #000099 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold;PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #000099 1px solid;COLOR: #fff; PADDING-TOP: 2px; BORDER-BOTTOM: #000099 1px solid; BACKGROUND-COLOR: #000099}ul.digg li.disabled {BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid;PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px;BORDER-LEFT: #eee 1px solid; COLOR: #ddd; PADDING-TOP: 2px;BORDER-BOTTOM: #eee 1px solid}h4{ float:right; padding-top:22px; color: #aaaaaa;}  .mip-footer {position: absolute;width: 100%;text-align: center;font-size: 0.2rem;color: #999;background-color: #ddd;height: 60px;line-height: 60px;}  h3{ float:left; width:40px; padding-top:12px; color:#aaaaaa;}  a {color: #1d9ce5}  h2 { text-align:center}  p{text-indent:2em;}  #myli{width:40%;margin:3px;display:inline-block;}  em{color: #008cba;font-style: normal;}  hr{height:1px;border:none;border-top:1px dashed #0066CC;}  .navbar-brand{background-image:url(https://jiakaozuche.oss-cn-hangzhou.aliyuncs.com/mip_logo.png)}  .article-entry-info {height: 35px;}  .article-entry-info .base-info {float: left;}  .label-info {background-color: #033c73;}  .label {display: inline;padding: .2em .6em .3em;font-size: 75%;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;  white-space: nowrap;vertical-align: baseline;border-radius: .25em;}  .article-entry-info .main-info {float: right;}  .label-primary {background-color: #2fa4e7;}  .article-entry-sum {margin-top: 5px;}  .list-group {margin-bottom: 20px;padding-left: 0;}  .article-entry-header {margin: 0;padding: 0;border: 0;font: inherit;vertical-align: baseline;}  .article-entry-title {text-align: center;margin-bottom: 10px;}  .list-group-item:last-child {margin-bottom: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;}  .list-group-item:first-child {border-top-right-radius: 4px;border-top-left-radius: 4px;}  .list-group-item {position: relative;display: block;padding: 10px 15px;margin-bottom: -1px;background-color: #ffffff;border: 1px solid #dddddd;}  #aw{color: white}
+    </style>
+</head>
+<body>
+<div class="mip-nav-wrapper">
+<mip-nav-slidedown data-id="bs-navbar" class="mip-element-sidebar container" data-showbrand="1" data-brandhref="{{ url_for('main.index', _external=True) }}">
+    <nav id="bs-navbar" class="navbar-collapse collapse navbar navbar-static-top">
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a target="_blank" href="{{ url_for('main.index', _external=True) }}">首页</a>
+            </li>
+
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=1, _external=True) }}">驾校招生</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=2, _external=True) }}">教练招生</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=3, _external=True) }}">驾考租车</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=4, _external=True) }}">科二租车陪练</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=5, _external=True) }}">科三租车陪练</a>
+            </li>
+            <li class="navbar-wise-close">
+                <span id="navbar-wise-close-btn"></span>
+            </li>
+        </ul>
+    </nav>
+</mip-nav-slidedown>
+</div>
+
+<div class="mip-html">
+    {% block content %}{% endblock %}
+    <div class="mip-share-container">
+        <h3>分享:</h3>
+        <mip-share
+            icon="https://iotserv-public-share.oss-cn-hangzhou.aliyuncs.com/logo.png"
+            layout="fixed"
+            width="220"
+            height="60">
+        </mip-share>
+    </div>
+</div>
+
+<div class="mip-footer">
+    <p>CopyRight 20016-2017 驾考租车网</p>
+</div>
+<mip-stats-baidu token="cb61d88d2bffc747f2e5e8be672c3751"></mip-stats-baidu>
+<script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-nav-slidedown/mip-nav-slidedown.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-share/mip-share.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-stats-baidu/mip-stats-baidu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html mip>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="keywords" content="{{ article.city or '' }}驾校，{{ article.city or '' }}陪练，{{ article.city or '' }}驾考租车，{{ article.city or '' }}陪练">
+    {% if article.mprovince %}
+    <meta name="location" content="province={{ article.mprovince }};city={{ article.mcity }};coord={{ article.lng }},{{ article.lat }}">
+    {% elif article.city %}
+        {% if article.city in ('北京', '上海', '天津', '重庆', '香港', '澳门') %}
+    <meta name="location" content="province={{ article.city }};city={{ article.city }}">
+        {% elif article.city in ('石家庄', '唐山', '秦皇岛', '邯郸', '邢台', '保定', '张家口', '承德', '沧州', '廊坊', '衡水') %}
+    <meta name="location" content="province=河北;city={{ article.city }}">
+        {% elif article.city in ('太原', '大同', '阳泉', '长治', '晋城', '朔州', '晋中', '运城', '忻州', '临汾', '吕梁') %}
+    <meta name="location" content="province=山西;city={{ article.city }}">
+        {% elif article.city in ('呼和浩特', '包头', '乌海', '赤峰', '通辽', '鄂尔多斯', '呼伦贝尔', '巴彦淖尔', '乌兰察布', '兴安盟', '锡林郭勒盟', '阿拉善盟') %}
+    <meta name="location" content="province=内蒙古;city={{ article.city }}">
+        {% elif article.city in ('沈阳', '大连', '鞍山', '抚顺', '本溪', '丹东', '锦州', '营口', '阜新', '辽阳', '盘锦', '铁岭', '朝阳', '葫芦岛') %}
+    <meta name="location" content="province=辽宁;city={{ article.city }}">
+        {% elif article.city in ('长春', '吉林市', '四平', '辽源', '通化', '白山', '松原', '白城', '延边') %}
+    <meta name="location" content="province=吉林;city={{ article.city }}">
+        {% elif article.city in ('哈尔滨', '齐齐哈尔', '鸡西', '鹤岗', '双鸭山', '大庆', '伊春', '佳木斯', '七台河', '牡丹江', '黑河', '绥化', '大兴安岭地区') %}
+    <meta name="location" content="province=黑龙江;city={{ article.city }}">
+        {% elif article.city in ('南京', '无锡', '徐州', '常州', '苏州', '南通', '连云港', '淮安', '盐城', '扬州', '镇江', '泰州', '宿迁') %}
+    <meta name="location" content="province=江苏;city={{ article.city }}">
+        {% elif article.city in ('杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水') %}
+    <meta name="location" content="province=浙江;city={{ article.city }}">
+        {% elif article.city in ('合肥', '芜湖', '蚌埠', '淮南', '马鞍山', '淮北', '铜陵', '安庆', '黄山', '滁州', '阜阳', '宿州', '巢湖', '六安', '亳州', '池州', '宣城') %}
+    <meta name="location" content="province=安徽;city={{ article.city }}">
+        {% elif article.city in ('福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德') %}
+    <meta name="location" content="province=福建;city={{ article.city }}">
+        {% elif article.city in ('南昌', '景德镇', '萍乡', '九江', '新余', '鹰潭', '赣州', '吉安', '宜春', '抚州', '上饶') %}
+    <meta name="location" content="province=江西;city={{ article.city }}">
+        {% elif article.city in ('济南', '青岛', '淄博', '枣庄', '东营', '烟台', '潍坊', '威海', '济宁', '泰安', '日照', '莱芜', '临沂', '德州', '聊城', '滨州', '菏泽') %}
+    <meta name="location" content="province=山东;city={{ article.city }}">
+        {% elif article.city in ('郑州', '开封', '洛阳', '平顶山', '焦作', '鹤壁', '新乡', '安阳', '濮阳', '许昌', '漯河', '三门峡', '南阳', '商丘', '信阳', '周口', '驻马店') %}
+    <meta name="location" content="province=河南;city={{ article.city }}">
+        {% elif article.city in ('武汉', '黄石', '襄樊', '十堰', '荆州', '宜昌', '荆门', '鄂州', '孝感', '黄冈', '咸宁', '随州', '恩施', '仙桃', '神农架林区') %}
+    <meta name="location" content="province=湖北;city={{ article.city }}">
+        {% elif article.city in ('长沙', '株洲', '湘潭', '衡阳', '邵阳', '岳阳', '常德', '张家界', '益阳', '郴州', '永州', '怀化', '娄底', '湘西' ) %}
+    <meta name="location" content="province=湖南;city={{ article.city }}">
+        {% elif article.city in ('广州', '深圳', '珠海', '汕头', '韶关', '佛山', '江门', '湛江', '茂名', '肇庆', '惠州', '梅州', '汕尾', '河源', '阳江', '清远', '东莞', '中山', '潮州', '揭阳', '云浮') %}
+    <meta name="location" content="province=广东;city={{ article.city }}">
+        {% elif article.city in ('南宁', '柳州', '桂林', '梧州', '北海', '防城港', '钦州', '贵港', '玉林', '百色', '贺州', '河池', '来宾', '崇左') %}
+    <meta name="location" content="province=广西;city={{ article.city }}">
+        {% elif article.city in ('海口', '三亚', '白沙', '保亭', '昌江', '儋州', '澄迈', '东方', '定安', '琼海', '琼中', '乐东', '临高', '陵水', '屯昌', '万宁', '文昌', '五指山') %}
+    <meta name="location" content="province=海南;city={{ article.city }}">
+        {% elif article.city in ('成都', '自贡', '攀枝花', '泸州', '德阳', '绵阳', '广元', '遂宁', '内江', '乐山', '南充', '宜宾', '广安', '达州', '眉山', '雅安', '巴中', '资阳', '阿坝州', '甘孜州', '凉山州') %}
+    <meta name="location" content="province=四川;city={{ article.city }}">
+        {% elif article.city in ('贵阳', '六盘水', '遵义', '安顺', '铜仁地区', '毕节地区', '黔西南州', '黔东南州', '黔南州') %}
+    <meta name="location" content="province=贵州;city={{ article.city }}">
+        {% elif article.city in ('昆明', '曲靖', '玉溪', '保山', '昭通', '丽江', '普洱', '临沧', '文山', '红河州', '西双版纳', '楚雄州', '大理州', '德宏州', '怒江州', '迪庆州') %}
+    <meta name="location" content="province=云南;city={{ article.city }}">
+        {% elif article.city in ('拉萨', '昌都地区', '山南地区', '日喀则地区', '那曲地区', '阿里地区', '林芝地区') %}
+    <meta name="location" content="province=西藏;city={{ article.city }}">
+        {% elif article.city in ('西安', '铜川', '宝鸡', '咸阳', '渭南', '延安', '汉中', '榆林', '安康', '商洛' ) %}
+    <meta name="location" content="province=陕西;city={{ article.city }}">
+        {% elif article.city in ('兰州', '嘉峪关', '金昌', '白银', '天水', '武威', '张掖', '平凉', '酒泉', '庆阳', '定西', '陇南', '临夏', '甘南') %}
+    <meta name="location" content="province=甘肃;city={{ article.city }}">
+        {% elif article.city in ('西宁', '海东地区', '海北州', '黄南州', '海南州', '果洛州', '玉树州', '海西州') %}
+    <meta name="location" content="province=青海;city={{ article.city }}">
+        {% elif article.city in ('银川', '石嘴山', '吴忠', '固原', '中卫') %}
+    <meta name="location" content="province=宁夏;city={{ article.city }}">
+        {% elif article.city in ('乌鲁木齐', '克拉玛依', '吐鲁番', '哈密', '和田', '阿克苏', '喀什', '克孜勒苏柯尔克孜', '巴音郭楞蒙古', '昌吉', '博尔塔拉蒙古', '伊犁哈萨克', '塔城', '阿勒泰' ) %}
+    <meta name="location" content="province=新疆;city={{ article.city }}">
+        {% elif article.city in ('台北', '高雄', '新北', '台中', '台南') %}
+    <meta name="location" content="province=台湾;city={{ article.city }}">
+     {% endif %}{% endif %}
+    <title>驾考租车，找驾校，驾考陪练-{{ article.title }}</title>
+    <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+    <link rel="canonical" href="{{ url_for('main.articleDetails', id=article.id, _external=True) }}">
+    <link rel="shortcut icon" href="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/images/favicon.ico" type="image/x-icon" />
+    <style mip-custom>
+          h4{ float:right; padding-top:22px; color: #aaaaaa;}  .mip-footer {position: absolute;width: 100%;text-align: center;font-size: 0.2rem;color: #999;background-color: #ddd;height: 60px;line-height: 60px;}  h3{ float:left; width:40px; padding-top:12px; color:#aaaaaa;}  a {color: #1d9ce5}  h2 { text-align:center}  p{text-indent:2em;}  #myli{width:40%;margin:3px;display:inline-block;}  em{color: #008cba;font-style: normal;}  hr{height:1px;border:none;border-top:1px dashed #0066CC;}  .navbar-brand{background-image:url(https://jiakaozuche.oss-cn-hangzhou.aliyuncs.com/mip_logo.png)}  .article-entry-info {height: 35px;}  .article-entry-info .base-info {float: left;}  .label-info {background-color: #033c73;}  .label {display: inline;padding: .2em .6em .3em;font-size: 75%;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;  white-space: nowrap;vertical-align: baseline;border-radius: .25em;}  .article-entry-info .main-info {float: right;}  .label-primary {background-color: #2fa4e7;}  .article-entry-sum {margin-top: 5px;}  .list-group {margin-bottom: 20px;padding-left: 0;}  .article-entry-header {margin: 0;padding: 0;border: 0;font: inherit;vertical-align: baseline;}  .article-entry-title {text-align: center;margin-bottom: 10px;}  .list-group-item:last-child {margin-bottom: 0;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;}  .list-group-item:first-child {border-top-right-radius: 4px;border-top-left-radius: 4px;}  .list-group-item {position: relative;display: block;padding: 10px 15px;margin-bottom: -1px;background-color: #ffffff;border: 1px solid #dddddd;}  #aw{color: white}
+    </style>
+</head>
+<body>
+<div class="mip-nav-wrapper">
+<mip-nav-slidedown data-id="bs-navbar" class="mip-element-sidebar container" data-showbrand="1" data-brandhref="{{ url_for('main.index', _external=True) }}">
+    <nav id="bs-navbar" class="navbar-collapse collapse navbar navbar-static-top">
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a target="_blank" href="{{ url_for('main.index', _external=True) }}">首页</a>
+            </li>
+
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=1, _external=True) }}">驾校招生</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=2, _external=True) }}">教练招生</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=3, _external=True) }}">驾考租车</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=4, _external=True) }}">科二租车陪练</a>
+            </li>
+            <li>
+                <a target="_blank" href="{{ url_for('main.articleTypes', id=5, _external=True) }}">科三租车陪练</a>
+            </li>
+            <li class="navbar-wise-close">
+                <span id="navbar-wise-close-btn"></span>
+            </li>
+        </ul>
+    </nav>
+</mip-nav-slidedown>
+</div>
+
+<div class="mip-html">
+      <div class="list-group-item">
+            <div class="article-entry-header">
+                <h2 class="article-entry-title">
+                    <a href="{{ url_for('main.articleDetails', id=article.id, _external=True) }}">{{ article.title }}</a>
+                </h2>
+            </div>
+
+            <div class="article-entry-info">
+                <div class="base-info">
+                    <span class="label label-info">
+                        <a href="{{ url_for('mip.miparticleTypes', id=article.articleType.id, _external=True) }}" target="_blank" id="aw">
+                            类型：{{ article.articleType.name }}
+                        </a>
+                    </span>
+                </div>
+                <div class="main-info">
+                    <span class="label label-primary"><a href="{{ url_for('username.detials', id=article.author.id, _external=True) }}" target="_blank" id="aw">
+                            联系我：{{ article.callname }}
+                        </a></span>
+                </div>
+            </div>
+            <div class="article-entry-sum">
+                <ul class="list-group">
+                    <li id="myli"><em>城市：</em>{% if article.city %}<a href="{{ url_for('mip.mipcity', word=article.city) }}">{{ article.city or '未知' }}</a>{% else %}{{ article.city or '未知' }}{% endif %}</li>
+                    <li id="myli"><em>服务价格：</em>{{ article.price or '询价' }}</li>
+                    <hr/>
+                    <li id="myli"><em>电话：</em>{{ article.tel or '未知' }}</li>
+                    <li id="myli"><em>证照类型：</em>{{ article.driverType.name or '未知' }}</li>
+                    <hr/>
+                    <li id="myli"><em>详细地址：</em>{{ article.detailplace or '未知' }}</li>
+                    {% if article.author_id==1 %}
+                    <li id="myli"><em>我要认领：</em><a href="{{ url_for('user.reclaim', id=article.id, _external=True) }}">认领</a></li>
+                    {% endif %}
+                    <hr/>
+                </ul>
+            </div>
+            <div>
+                <p>
+                    {{ article.content | striptags }}
+                </p>
+            </div>
+      <h4>日期：{% if article.update_time %}
+                <time>{{ article.update_time.replace(microsecond=0).date() }}</time>
+                {% else %}
+                    未知时间
+    {% endif %}</h4>
+    </div>
+
+    <div class="mip-share-container">
+        <h3>分享:</h3>
+        <mip-share
+            title="{{ article.title }}"
+            content="{{ article.content | striptags }}"
+            icon="https://iotserv-public-share.oss-cn-hangzhou.aliyuncs.com/logo.png"
+            layout="fixed"
+            width="220"
+            height="60">
+        </mip-share>
+
+    </div>
+    <mip-changyan appid="cyt328rtp" conf="prod_544c23a74816467c1dbd441e3630b817">
+        <div id="SOHUCS" sid="{{ id }}"></div>
+    </mip-changyan>
+</div>
+
+<div class="mip-footer">
+    <p>CopyRight 20016-2017 驾考租车网</p>
+</div>
+<mip-stats-baidu token="cb61d88d2bffc747f2e5e8be672c3751"></mip-stats-baidu>
+<script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-nav-slidedown/mip-nav-slidedown.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-share/mip-share.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-stats-baidu/mip-stats-baidu.js"></script>
+<script src="https://mipcache.bdstatic.com/static/v1/mip-changyan/mip-changyan.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+{% for article in articles %}
+    <div class="list-group-item">
+            <div class="article-entry-header">
+                <h2 class="article-entry-title">
+                    <a href="{{ url_for('mip.miparticleDetails', id=article.id, _external=True) }}">{{ article.title }}</a>
+                </h2>
+            </div>
+
+            <div class="article-entry-info">
+                <div class="base-info">
+                    <span class="label label-info">
+                        <a href="{{ url_for('mip.miparticleTypes', id=article.articleType.id, _external=True) }}" target="_blank" id="aw">
+                            类型：{{ article.articleType.name }}
+                        </a>
+                    </span>
+                </div>
+                <div class="main-info">
+                    <span class="label label-primary"><a href="{{ url_for('username.detials', id=article.author.id, _external=True) }}" target="_blank" id="aw">
+                            联系我：{{ article.callname }}
+                        </a></span>
+                </div>
+            </div>
+            <div class="article-entry-sum">
+                <ul class="list-group">
+                    <li id="myli"><em>城市：</em>{% if article.city %}<a href="{{ url_for('mip.mipcity', word=article.city) }}">{{ article.city or '未知' }}</a>{% else %}{{ article.city or '未知' }}{% endif %}</li>
+                    <li id="myli"><em>服务价格：</em>{{ article.price or '询价' }}</li>
+                    <hr/>
+                    <li id="myli"><em>电话：</em>{{ article.tel or '未知' }}</li>
+                    <li id="myli"><em>证照类型：</em>{{ article.driverType.name or '未知' }}</li>
+                    <hr/>
+                    <li id="myli"><em>详细地址：</em>{{ article.detailplace or '未知' }}</li>
+                    {% if article.author_id==1 %}
+                    <li id="myli"><em>我要认领：</em><a href="{{ url_for('user.reclaim', id=article.id, _external=True) }}">认领</a></li>
+                    {% endif %}
+                    <hr/>
+                </ul>
+            </div>
+    </div>
+{% endfor %}

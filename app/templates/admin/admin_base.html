@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block Content %}
+
+<div class="container">
+    <div class="row">
+        {% cache 60*5 %}
+        <div class="col-md-2 list-group">
+				<p class="list-group-item active">文章管理</p>
+				<a class="list-group-item" href="{{ url_for('admin.submitArticles') }}">发表信息</a>
+				<a class="list-group-item" href="{{ url_for('admin.manage_articles') }}">管理已发布信息</a>
+                <p class="list-group-item active">用户管理</p>
+				<a class="list-group-item" href="{{ url_for('admin.userList') }}">所有用户</a>
+                <a class="list-group-item" href="{{ url_for('admin.giveCoin') }}">给予金币</a>
+                <a class="list-group-item" href="{{ url_for('admin.quxiaoRenling') }}">取消认领</a>
+                <a class="list-group-item" href="{{ url_for('admin.emailReplace') }}">email替换</a>
+                <p class="list-group-item active">插件管理</p>
+				<a class="list-group-item" href="{{ url_for('admin.custom_blog_plugin') }}">插件管理</a>
+				<a class="list-group-item" href="{{ url_for('admin.add_plugin') }}">添加插件</a>
+                <a class="list-group-item" href="{{ url_for('admin.js') }}">编辑JS</a>
+                <p class="list-group-item active">其它管理</p>
+                <a class="list-group-item" href="{{ url_for('admin.duoshuo') }}">多说管理</a>
+				<a class="list-group-item" href="{{ url_for('admin.account') }}">用户账户</a>
+        </div>
+        {% endcache %}
+        <div class="col-md-10">
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+                <div class="alert alert-{{category}} alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% block admin_content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+    {{ super() }}
+    <script src="http://jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/js/admin.js"></script>
+{% endblock %}

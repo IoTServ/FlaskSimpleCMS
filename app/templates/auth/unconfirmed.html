@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}驾考租车网 - 确认您的邮件{% endblock %}
+
+{% block content %}
+<div>
+    <h1>
+        您好, {{ current_user.username }}!
+    </h1>
+    <h3 style="color: #ff110a">您还没有确认您的邮件！<span>请查看您的邮箱：{{ current_user.email }}</span></h3>
+    <p>
+        在你正常使用您的账户之前请确认您的邮箱地址.
+        请登录您填写的邮箱，查收驾考租车网发送的邮件，并点击确认连接来确认您对邮箱的使用权。
+    </p>
+    <p>
+        还没有收到邮件，或者链接失效?拼图后重发邮件。
+    </p>
+    <form class="popup" action="{{ url_for('auth.resend_confirmation') }}" method="post">
+    <input name=_csrf_token type=hidden value="{{ csrf_token() }}">
+    <div id="embed-captcha"></div>
+    <p id="wait" class="show">正在加载验证码......</p>
+    <p id="notice" class="hide" style="color: red">请先拖动验证码到相应位置</p>
+    <input class="btn" id="embed-submit" type="submit" value="重发邮件">
+    </form>
+
+</div>
+
+{% endblock %}
+{% block script %}
+    {{ super() }}
+    <script src="http://static.geetest.com/static/tools/gt.js"></script>
+    <script src="{{ url_for('static', filename='js/geetest_setup.js') }}"></script>
+{% endblock %}

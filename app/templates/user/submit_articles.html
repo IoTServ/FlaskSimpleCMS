@@ -1,0 +1,75 @@
+{% extends 'user/admin_base.html' %}
+
+{% block title %}
+    驾考租车 -发布信息
+{% endblock %}
+
+{% block stylesheet %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='kindeditor/themes/default/default.css') }}" />
+{% endblock %}
+{% block script %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='kindeditor/kindeditor.js') }}"></script>
+    <script src="{{ url_for('static', filename='kindeditor/lang/zh_CN.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/kindeditor_setup.js') }}"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script>$(document).ready(function() {$("#province").val(remote_ip_info.province);$("#city").val(remote_ip_info.city);$("#ip").val(returnCitySN.cip);})</script>
+{% endblock %}
+{% block admin_content %}
+<div class="list-group">
+    <h4 class="list-group-item active"><strong>发布信息</strong></h4>
+    <form class="submit-article" method="post" action="">
+        {{ form.csrf_token }}
+        {% cache 60*5 %}
+        <input type=hidden name="province" id="province" value="">
+        <input type=hidden name="city" id="city" value="">
+        <input type=hidden name="ip" id="ip" value="">
+        <div class="list-group-item">
+            {{ form.types.label(class='control-label') }}：
+            <span>{{ form.types(class="form-control input-sm") }}</span>
+        </div>
+        <div class="list-group-item">
+            {{ form.drivertypes.label(class='control-label') }}：
+            <span>{{ form.drivertypes(class="form-control input-sm") }}</span>
+        </div>
+        <div class="list-group-item">
+            {{ form.title.label(class='control-label') }}（1-50字）：
+            <span>{{ form.title(class='form-control input-sm', required='') }}</span>
+        </div>
+        <div class="list-group-item">
+            {{ form.price.label(class='control-label') }}：
+            {{ form.price(class='form-control input-sm', required='') }}
+        </div>
+        <div class="list-group-item">
+            {{ form.area.label(class='control-label') }}：
+            {{ form.area(class='form-control input-sm', required='') }}
+        </div>
+         <div class="list-group-item">
+            {{ form.comname.label(class='control-label') }}：
+            {{ form.comname(class='form-control input-sm', required='') }}
+        </div>
+        <div class="list-group-item">
+            {{ form.callname.label(class='control-label') }}：
+            {{ form.callname(class='form-control input-sm', required='') }}
+        </div>
+        <div class="list-group-item">
+            {{ form.tel.label(class='control-label') }}：
+            {{ form.tel(class='form-control input-sm', required='') }}
+        </div>
+        <div class="list-group-item">
+            {{ form.addr.label(class='control-label') }}：
+            {{ form.addr(class='form-control input-sm', required='') }}
+        </div>
+        <div class="list-group-item">
+            {{ form.content.label(class='control-label') }}
+            {{ form.content(style="height:600px;", class='form-control') }}
+        </div>
+        <div class="submit-article-button">
+            <button type="submit" class="btn btn-success">提交(消耗{{ config['COIN_SUBMIT_COST'] }}金币)</button>
+        </div>
+        {% endcache %}
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block title %}
+    驾考租车 -发布信息
+{% endblock %}
+
+{% block stylesheet %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='kindeditor/themes/default/default.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='kindeditor/plugins/code/prettify.css') }}" />
+{% endblock %}
+
+{% block script %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='kindeditor/kindeditor.js') }}"></script>
+    <script src="{{ url_for('static', filename='kindeditor/lang/zh_CN.js') }}"></script>
+    <script src="{{ url_for('static', filename='kindeditor/plugins/code/prettify.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/kindeditor_setup.js') }}"></script>
+{% endblock %}
+
+{% block admin_content %}
+    <div class="list-group">
+        <h4 class="list-group-item active"><strong>发布信息</strong></h4>
+        <form class="submit-article" method="post" action="">
+            {{ form.csrf_token }}
+            <div class="list-group-item">
+                {{ form.js_code.label(class='control-label') }}
+                {{ form.js_code(style="height:600px;", class='form-control') }}
+            </div>
+            <div class="submit-article-button">
+                <button type="submit" class="btn btn-success">提交</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

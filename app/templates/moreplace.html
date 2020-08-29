@@ -1,0 +1,331 @@
+{% extends 'base.html' %}
+{% block meta %}{{ super() }}
+    <link rel="miphtml" href="{{ url_for('mip.mipplace', _external=True) }}">{% endblock %}
+{% block content %}
+<h3>直辖市</h3><br>
+<a href="{{ url_for('main.city',word='重庆') }}">重庆</a>、
+<a href="{{ url_for('main.city',word='北京') }}">北京</a>、
+<a href="{{ url_for('main.city',word='上海') }}">上海</a>、
+<a href="{{ url_for('main.city',word='天津') }}">天津</a>
+<h3>省</h3><br>
+<h4>安徽省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='合肥') }}">合肥</a>、<a href="{{ url_for('main.city',word='宿州') }}">宿州</a>、<a href="{{ url_for('main.city',word='淮北') }}">淮北</a>、
+    <a href="{{ url_for('main.city',word='阜阳') }}">阜阳</a>、<a href="{{ url_for('main.city',word='蚌埠') }}">蚌埠</a>、<a href="{{ url_for('main.city',word='淮南') }}">淮南</a>、
+    <a href="{{ url_for('main.city',word='滁州') }}">滁州</a>、<a href="{{ url_for('main.city',word='马鞍山') }}">马鞍山</a>、<a href="{{ url_for('main.city',word='芜湖') }}">芜湖</a>、
+    <a href="{{ url_for('main.city',word='铜陵') }}">铜陵</a>、<a href="{{ url_for('main.city',word='安庆') }}">安庆</a>、<a href="{{ url_for('main.city',word='黄山') }}">黄山</a>、
+    <a href="{{ url_for('main.city',word='六安') }}">六安</a>、<a href="{{ url_for('main.city',word='巢湖') }}">巢湖</a>、<a href="{{ url_for('main.city',word='池州') }}">池州</a>、
+    <a href="{{ url_for('main.city',word='宣城') }}">宣城</a>、<a href="{{ url_for('main.city',word='亳州') }}">亳州</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='界首') }}">界首</a>、<a href="{{ url_for('main.city',word='明光') }}">明光</a>、<a href="{{ url_for('main.city',word='天长') }}">天长</a>、
+    <a href="{{ url_for('main.city',word='桐城') }}">桐城</a>、<a href="{{ url_for('main.city',word='宁国') }}">宁国</a>。<br>
+    <br>
+<h4>福建省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='厦门') }}">厦门</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='福州') }}">福州</a>、<a href="{{ url_for('main.city',word='南平') }}">南平</a>、<a href="{{ url_for('main.city',word='三明') }}">三明</a>、<a href="{{ url_for('main.city',word='莆田') }}">莆田</a>、
+    <a href="{{ url_for('main.city',word='泉州') }}">泉州</a>、<a href="{{ url_for('main.city',word='漳州') }}">漳州</a>、<a href="{{ url_for('main.city',word='龙岩') }}">龙岩</a>、<a href="{{ url_for('main.city',word='宁德') }}">宁德</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='福清') }}">福清</a>、<a href="{{ url_for('main.city',word='长乐') }}">长乐</a>、<a href="{{ url_for('main.city',word='邵武') }}">邵武</a>、
+    <a href="{{ url_for('main.city',word='武夷山') }}">武夷山</a>、<a href="{{ url_for('main.city',word='建瓯') }}">建瓯</a>、<a href="{{ url_for('main.city',word='建阳') }}">建阳</a>、
+    <a href="{{ url_for('main.city',word='永安') }}">永安</a>、<a href="{{ url_for('main.city',word='石狮') }}">石狮</a>、<a href="{{ url_for('main.city',word='晋江') }}">晋江</a>、
+    <a href="{{ url_for('main.city',word='南安') }}">南安</a>、<a href="{{ url_for('main.city',word='龙海') }}">龙海</a>、<a href="{{ url_for('main.city',word='漳平') }}">漳平</a>、
+    <a href="{{ url_for('main.city',word='福安') }}">福安</a>、<a href="{{ url_for('main.city',word='福鼎') }}">福鼎</a>。<br>
+    <br>
+<h4>甘肃省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='兰州') }}">兰州</a>、<a href="{{ url_for('main.city',word='嘉峪关') }}">嘉峪关</a>、<a href="{{ url_for('main.city',word='金昌') }}">金昌</a>、
+    <a href="{{ url_for('main.city',word='白银') }}">白银</a>、<a href="{{ url_for('main.city',word='天水') }}">天水</a>、<a href="{{ url_for('main.city',word='酒泉') }}">酒泉</a>、
+    <a href="{{ url_for('main.city',word='张掖') }}">张掖</a>、<a href="{{ url_for('main.city',word='武威') }}">武威</a>、<a href="{{ url_for('main.city',word='庆阳') }}">庆阳</a>、
+    <a href="{{ url_for('main.city',word='平凉') }}">平凉</a>、<a href="{{ url_for('main.city',word='定西') }}">定西</a>、<a href="{{ url_for('main.city',word='陇南') }}">陇南</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='玉门') }}">玉门</a>、<a href="{{ url_for('main.city',word='敦煌') }}">敦煌</a>、<a href="{{ url_for('main.city',word='临夏') }}">临夏</a>、<a href="{{ url_for('main.city',word='合作') }}">合作</a>。<br>
+<br>
+<h4>广东省</h4><br>
+副省级城市： <a href="{{ url_for('main.city',word='广州') }}">广州</a>、<a href="{{ url_for('main.city',word='深圳') }}">深圳</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='清远') }}">清远</a>、<a href="{{ url_for('main.city',word='韶关') }}">韶关</a>、<a href="{{ url_for('main.city',word='河源') }}">河源</a>、
+    <a href="{{ url_for('main.city',word='梅州') }}">梅州</a>、<a href="{{ url_for('main.city',word='潮州') }}">潮州</a>、<a href="{{ url_for('main.city',word='汕头') }}">汕头</a>、
+    <a href="{{ url_for('main.city',word='揭阳') }}">揭阳</a>、<a href="{{ url_for('main.city',word='汕尾') }}">汕尾</a>、<a href="{{ url_for('main.city',word='惠州') }}">惠州</a>、
+    <a href="{{ url_for('main.city',word='东莞') }}">东莞</a>、<a href="{{ url_for('main.city',word='珠海') }}">珠海</a>、<a href="{{ url_for('main.city',word='中山') }}">中山</a>、
+    <a href="{{ url_for('main.city',word='江门') }}">江门</a>、<a href="{{ url_for('main.city',word='佛山') }}">佛山</a>、<a href="{{ url_for('main.city',word='肇庆') }}">肇庆</a>、
+    <a href="{{ url_for('main.city',word='云浮') }}">云浮</a>、<a href="{{ url_for('main.city',word='阳江') }}">阳江</a>、<a href="{{ url_for('main.city',word='茂名') }}">茂名</a>、<a href="{{ url_for('main.city',word='湛江') }}">湛江</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='从化') }}">从化</a>、<a href="{{ url_for('main.city',word='增城') }}">增城</a>、<a href="{{ url_for('main.city',word='英德') }}">英德</a>、
+    <a href="{{ url_for('main.city',word='连州') }}">连州</a>、<a href="{{ url_for('main.city',word='乐昌') }}">乐昌</a>、<a href="{{ url_for('main.city',word='南雄') }}">南雄</a>、
+    <a href="{{ url_for('main.city',word='兴宁') }}">兴宁</a>、<a href="{{ url_for('main.city',word='普宁') }}">普宁</a>、<a href="{{ url_for('main.city',word='陆丰') }}">陆丰</a>、
+    <a href="{{ url_for('main.city',word='恩平') }}">恩平</a>、<a href="{{ url_for('main.city',word='台山') }}">台山</a>、<a href="{{ url_for('main.city',word='开平') }}">开平</a>、
+    <a href="{{ url_for('main.city',word='鹤山') }}">鹤山</a>、<a href="{{ url_for('main.city',word='高要') }}">高要</a>、<a href="{{ url_for('main.city',word='四会') }}">四会</a>、
+    <a href="{{ url_for('main.city',word='罗定') }}">罗定</a>、<a href="{{ url_for('main.city',word='阳春') }}">阳春</a>、<a href="{{ url_for('main.city',word='化州') }}">化州</a>、
+    <a href="{{ url_for('main.city',word='信宜') }}">信宜</a>、<a href="{{ url_for('main.city',word='高州') }}">高州</a>、<a href="{{ url_for('main.city',word='吴川') }}">吴川</a>、
+    <a href="{{ url_for('main.city',word='廉江') }}">廉江</a>、<a href="{{ url_for('main.city',word='雷州') }}">雷州</a>。<br>
+<br>
+<h4>贵州省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='贵阳') }}">贵阳</a>、<a href="{{ url_for('main.city',word='六盘水') }}">六盘水</a>、<a href="{{ url_for('main.city',word='遵义') }}">遵义</a>、<a href="{{ url_for('main.city',word='安顺') }}">安顺</a><br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='清镇') }}">清镇</a>、<a href="{{ url_for('main.city',word='赤水') }}">赤水</a>、<a href="{{ url_for('main.city',word='仁怀') }}">仁怀</a>、
+    <a href="{{ url_for('main.city',word='凯里') }}">凯里</a>、<a href="{{ url_for('main.city',word='都匀') }}">都匀</a>、<a href="{{ url_for('main.city',word='兴义') }}">兴义</a>、
+    <a href="{{ url_for('main.city',word='毕节') }}">毕节</a>、<a href="{{ url_for('main.city',word='铜仁') }}">铜仁</a>、<a href="{{ url_for('main.city',word='福泉') }}">福泉</a><br>
+<br>
+<h4>河北省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='石家庄') }}">石家庄</a>、<a href="{{ url_for('main.city',word='邯郸') }}">邯郸</a>、<a href="{{ url_for('main.city',word='唐山') }}">唐山</a>、
+    <a href="{{ url_for('main.city',word='保定') }}">保定</a>、<a href="{{ url_for('main.city',word='秦皇岛') }}">秦皇岛</a>、<a href="{{ url_for('main.city',word='邢台') }}">邢台</a>、
+    <a href="{{ url_for('main.city',word='张家口') }}">张家口</a>、<a href="{{ url_for('main.city',word='承德') }}">承德</a>、<a href="{{ url_for('main.city',word='沧州') }}">沧州</a>、
+    <a href="{{ url_for('main.city',word='廊坊') }}">廊坊</a>、<a href="{{ url_for('main.city',word='衡水') }}">衡水</a> 。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='辛集') }}">辛集</a>、<a href="{{ url_for('main.city',word='藁城') }}">藁城</a>、<a href="{{ url_for('main.city',word='晋州') }}">晋州</a>、
+    <a href="{{ url_for('main.city',word='新乐') }}">新乐</a>、<a href="{{ url_for('main.city',word='鹿泉') }}">鹿泉</a>、<a href="{{ url_for('main.city',word='丰南') }}">丰南</a>、
+    <a href="{{ url_for('main.city',word='遵化') }}">遵化</a>、<a href="{{ url_for('main.city',word='迁安') }}">迁安</a>、<a href="{{ url_for('main.city',word='霸州') }}">霸州</a>、
+    <a href="{{ url_for('main.city',word='三河') }}">三河</a>、<a href="{{ url_for('main.city',word='定州') }}">定州</a>、<a href="{{ url_for('main.city',word='涿州') }}">涿州</a>、
+    <a href="{{ url_for('main.city',word='安国') }}">安国</a>、<a href="{{ url_for('main.city',word='高碑店') }}">高碑店</a>、<a href="{{ url_for('main.city',word='泊头') }}">泊头</a>、
+    <a href="{{ url_for('main.city',word='任丘') }}">任丘</a>、<a href="{{ url_for('main.city',word='黄骅') }}">黄骅</a>、<a href="{{ url_for('main.city',word='河间') }}">河间</a>、
+    <a href="{{ url_for('main.city',word='冀州') }}">冀州</a>、<a href="{{ url_for('main.city',word='深州') }}">深州</a>、<a href="{{ url_for('main.city',word='南宫') }}">南宫</a>、
+    <a href="{{ url_for('main.city',word='沙河') }}">沙河</a>、<a href="{{ url_for('main.city',word='武安') }}">武安</a>。<br>
+<br>
+<h4>黑龙江省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='哈尔滨') }}">哈尔滨</a><br>
+    <br>
+地级市：<a href="{{ url_for('main.city',word='齐齐哈尔') }}">齐齐哈尔</a>、<a href="{{ url_for('main.city',word='黑河') }}">黑河</a>、<a href="{{ url_for('main.city',word='大庆') }}">大庆</a>、
+    <a href="{{ url_for('main.city',word='伊春') }}">伊春</a>、<a href="{{ url_for('main.city',word='鹤岗') }}">鹤岗</a>、<a href="{{ url_for('main.city',word='佳木斯') }}">佳木斯</a>、
+    <a href="{{ url_for('main.city',word='双鸭山') }}">双鸭山</a>、<a href="{{ url_for('main.city',word='七台河') }}">七台河</a>、<a href="{{ url_for('main.city',word='鸡西') }}">鸡西</a>、
+    <a href="{{ url_for('main.city',word='牡丹江') }}">牡丹江</a>、<a href="{{ url_for('main.city',word='绥化') }}">绥化</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='双城') }}">双城</a>、<a href="{{ url_for('main.city',word='尚志') }}">尚志</a>、<a href="{{ url_for('main.city',word='五常') }}">五常</a>、<a href="{{ url_for('main.city',word='阿城') }}">阿城</a>、
+    <a href="{{ url_for('main.city',word='讷河') }}">讷河</a>、<a href="{{ url_for('main.city',word='北安') }}">北安</a>、<a href="{{ url_for('main.city',word='五大连池') }}">五大连池</a>、
+    <a href="{{ url_for('main.city',word='铁力') }}">铁力</a>、<a href="{{ url_for('main.city',word='同江') }}">同江</a>、<a href="{{ url_for('main.city',word='富锦') }}">富锦</a>、
+    <a href="{{ url_for('main.city',word='虎林') }}">虎林</a>、<a href="{{ url_for('main.city',word='密山') }}">密山</a>、<a href="{{ url_for('main.city',word='绥芬河') }}">绥芬河</a>、
+    <a href="{{ url_for('main.city',word='海林') }}">海林</a>、<a href="{{ url_for('main.city',word='宁安') }}">宁安</a>、<a href="{{ url_for('main.city',word='安达') }}">安达</a>、
+    <a href="{{ url_for('main.city',word='肇东') }}">肇东</a>、<a href="{{ url_for('main.city',word='海伦') }}">海伦</a>。<br>
+<h4>河南省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='郑州') }}">郑州</a>、<a href="{{ url_for('main.city',word='开封') }}">开封</a>、<a href="{{ url_for('main.city',word='洛阳') }}">洛阳</a>、
+    <a href="{{ url_for('main.city',word='平顶山') }}">平顶山</a>、<a href="{{ url_for('main.city',word='安阳') }}">安阳</a>、<a href="{{ url_for('main.city',word='鹤壁') }}">鹤壁</a>、
+    <a href="{{ url_for('main.city',word='新乡') }}">新乡</a>、<a href="{{ url_for('main.city',word='焦作') }}">焦作</a>、<a href="{{ url_for('main.city',word='濮阳') }}">濮阳</a>、
+    <a href="{{ url_for('main.city',word='许昌') }}">许昌</a>、<a href="{{ url_for('main.city',word='漯河') }}">漯河</a>、<a href="{{ url_for('main.city',word='三门峡') }}">三门峡</a>、
+    <a href="{{ url_for('main.city',word='南阳') }}">南阳</a>、<a href="{{ url_for('main.city',word='商丘') }}">商丘</a>、<a href="{{ url_for('main.city',word='周口') }}">周口</a>、
+    <a href="{{ url_for('main.city',word='驻马店') }}">驻马店</a>、<a href="{{ url_for('main.city',word='信阳') }}">信阳</a>。<br>
+<br>
+省直辖县级市：<a href="{{ url_for('main.city',word='济源') }}">济源</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='荥阳') }}">荥阳</a>、<a href="{{ url_for('main.city',word='新郑') }}">新郑</a>、<a href="{{ url_for('main.city',word='登封') }}">登封</a>、
+    <a href="{{ url_for('main.city',word='新密') }}">新密</a>、<a href="{{ url_for('main.city',word='巩义') }}">巩义</a>、<a href="{{ url_for('main.city',word='邓州') }}">邓州</a>、
+    <a href="{{ url_for('main.city',word='偃师') }}">偃师</a>、<a href="{{ url_for('main.city',word='孟州') }}">孟州</a>、<a href="{{ url_for('main.city',word='沁阳') }}">沁阳</a>、
+    <a href="{{ url_for('main.city',word='卫辉') }}">卫辉</a>、<a href="{{ url_for('main.city',word='辉县') }}">辉县</a>、<a href="{{ url_for('main.city',word='林州') }}">林州</a>、
+    <a href="{{ url_for('main.city',word='永城') }}">永城</a>、<a href="{{ url_for('main.city',word='禹州') }}">禹州</a>、<a href="{{ url_for('main.city',word='长葛') }}">长葛</a>、
+    <a href="{{ url_for('main.city',word='舞钢') }}">舞钢</a>、<a href="{{ url_for('main.city',word='汝州') }}">汝州</a>、<a href="{{ url_for('main.city',word='义马') }}">义马</a>、
+    <a href="{{ url_for('main.city',word='灵宝') }}">灵宝</a>、<a href="{{ url_for('main.city',word='项城') }}">项城</a>。<br>
+<br>
+<h4>湖北省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='武汉') }}">武汉</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='十堰') }}">十堰</a>、<a href="{{ url_for('main.city',word='襄樊') }}">襄樊</a>、<a href="{{ url_for('main.city',word='荆门') }}">荆门</a>、
+    <a href="{{ url_for('main.city',word='孝感') }}">孝感</a>、<a href="{{ url_for('main.city',word='黄冈') }}">黄冈</a>、<a href="{{ url_for('main.city',word='鄂州') }}">鄂州</a>、
+    <a href="{{ url_for('main.city',word='黄石') }}">黄石</a>、<a href="{{ url_for('main.city',word='咸宁') }}">咸宁</a>、<a href="{{ url_for('main.city',word='荆州') }}">荆州</a>、
+    <a href="{{ url_for('main.city',word='宜昌') }}">宜昌</a>、<a href="{{ url_for('main.city',word='随州') }}">随州</a>。<br>
+<br>
+省直辖县级市：<a href="{{ url_for('main.city',word='仙桃') }}">仙桃</a>、<a href="{{ url_for('main.city',word='天门') }}">天门</a>、<a href="{{ url_for('main.city',word='潜江') }}">潜江</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='丹江口') }}">丹江口</a>、<a href="{{ url_for('main.city',word='老河口') }}">老河口</a>、<a href="{{ url_for('main.city',word='枣阳') }}">枣阳</a>、
+    <a href="{{ url_for('main.city',word='宜城') }}">宜城</a>、<a href="{{ url_for('main.city',word='钟祥') }}">钟祥</a>、<a href="{{ url_for('main.city',word='汉川') }}">汉川</a>、
+    <a href="{{ url_for('main.city',word='应城') }}">应城</a>、<a href="{{ url_for('main.city',word='安陆') }}">安陆</a>、<a href="{{ url_for('main.city',word='广水') }}">广水</a>、
+    <a href="{{ url_for('main.city',word='麻城') }}">麻城</a>、<a href="{{ url_for('main.city',word='武穴') }}">武穴</a>、<a href="{{ url_for('main.city',word='大冶') }}">大冶</a>、
+    <a href="{{ url_for('main.city',word='赤壁') }}">赤壁</a>、<a href="{{ url_for('main.city',word='石首') }}">石首</a>、<a href="{{ url_for('main.city',word='洪湖') }}">洪湖</a>、
+    <a href="{{ url_for('main.city',word='松滋') }}">松滋</a>、<a href="{{ url_for('main.city',word='宜都') }}">宜都</a>、<a href="{{ url_for('main.city',word='枝江') }}">枝江</a>、
+    <a href="{{ url_for('main.city',word='当阳') }}">当阳</a>、<a href="{{ url_for('main.city',word='恩施') }}">恩施</a>、<a href="{{ url_for('main.city',word='利川') }}">利川</a>。<br>
+<br>
+<h4>湖南省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='长沙') }}">长沙</a>、<a href="{{ url_for('main.city',word='张家界') }}">张家界</a>、<a href="{{ url_for('main.city',word='常德') }}">常德</a>、
+    <a href="{{ url_for('main.city',word='益阳') }}">益阳</a>、<a href="{{ url_for('main.city',word='岳阳') }}">岳阳</a>、<a href="{{ url_for('main.city',word='株洲') }}">株洲</a>、<a href="{{ url_for('main.city',word='桐城') }}">湘潭</a>、
+    <a href="{{ url_for('main.city',word='衡阳') }}">衡阳</a>、<a href="{{ url_for('main.city',word='郴州') }}">郴州</a>、<a href="{{ url_for('main.city',word='永州') }}">永州</a>、<a href="{{ url_for('main.city',word='桐城') }}">邵阳</a>、
+    <a href="{{ url_for('main.city',word='怀化') }}">怀化</a>、<a href="{{ url_for('main.city',word='娄底') }}">娄底</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='浏阳') }}">浏阳</a>、<a href="{{ url_for('main.city',word='津市') }}">津市</a>、<a href="{{ url_for('main.city',word='沅江') }}">沅江</a>、
+    <a href="{{ url_for('main.city',word='汨罗') }}">汨罗</a>、<a href="{{ url_for('main.city',word='临湘') }}">临湘</a>、<a href="{{ url_for('main.city',word='醴陵') }}">醴陵</a>、
+    <a href="{{ url_for('main.city',word='湘乡') }}">湘乡</a>、<a href="{{ url_for('main.city',word='韶山') }}">韶山</a>、<a href="{{ url_for('main.city',word='耒阳') }}">耒阳</a>、
+    <a href="{{ url_for('main.city',word='常宁') }}">常宁</a>、<a href="{{ url_for('main.city',word='资兴') }}">资兴</a>、<a href="{{ url_for('main.city',word='武冈') }}">武冈</a>、
+    <a href="{{ url_for('main.city',word='洪江') }}">洪江</a>、<a href="{{ url_for('main.city',word='冷水江') }}">冷水江</a>、<a href="{{ url_for('main.city',word='涟源') }}">涟源</a>、<a href="{{ url_for('main.city',word='桐城') }}">吉首</a>。<br>
+<br>
+<h4>吉林省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='长春') }}">长春</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='吉林市') }}">吉林市</a>、<a href="{{ url_for('main.city',word='白城') }}">白城</a>、<a href="{{ url_for('main.city',word='松原') }}">松原</a>、
+    <a href="{{ url_for('main.city',word='四平') }}">四平</a>、<a href="{{ url_for('main.city',word='辽源') }}">辽源</a>、<a href="{{ url_for('main.city',word='通化') }}">通化</a>、<a href="{{ url_for('main.city',word='白山') }}">白山</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='德惠') }}">德惠</a>、<a href="{{ url_for('main.city',word='九台') }}">九台</a>、<a href="{{ url_for('main.city',word='榆树') }}">榆树</a>、
+    <a href="{{ url_for('main.city',word='磐石') }}">磐石</a>、<a href="{{ url_for('main.city',word='蛟河') }}">蛟河</a>、<a href="{{ url_for('main.city',word='桦甸') }}">桦甸</a>、
+    <a href="{{ url_for('main.city',word='舒兰') }}">舒兰</a>、<a href="{{ url_for('main.city',word='洮南') }}">洮南</a>、<a href="{{ url_for('main.city',word='大安') }}">大安</a>、
+    <a href="{{ url_for('main.city',word='双辽') }}">双辽</a>、<a href="{{ url_for('main.city',word='公主岭') }}">公主岭</a>、<a href="{{ url_for('main.city',word='梅河口') }}">梅河口</a>、
+    <a href="{{ url_for('main.city',word='集安') }}">集安</a>、<a href="{{ url_for('main.city',word='临江') }}">临江</a>、<a href="{{ url_for('main.city',word='延吉') }}">延吉</a>、
+    <a href="{{ url_for('main.city',word='图们') }}">图们</a>、<a href="{{ url_for('main.city',word='敦化') }}">敦化</a>、<a href="{{ url_for('main.city',word='珲春') }}">珲春</a>、
+    <a href="{{ url_for('main.city',word='龙井') }}">龙井</a>、<a href="{{ url_for('main.city',word='和龙') }}">和龙</a>。<br>
+<br>
+<h4>江西省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='南昌') }}">南昌</a>、<a href="{{ url_for('main.city',word='九江') }}">九江</a>、<a href="{{ url_for('main.city',word='景德镇') }}">景德镇</a>、
+    <a href="{{ url_for('main.city',word='鹰潭') }}">鹰潭</a>、<a href="{{ url_for('main.city',word='新余') }}">新余</a>、<a href="{{ url_for('main.city',word='萍乡') }}">萍乡</a>、
+    <a href="{{ url_for('main.city',word='赣州') }}">赣州</a>、<a href="{{ url_for('main.city',word='上饶') }}">上饶</a>、<a href="{{ url_for('main.city',word='抚州') }}">抚州</a>、
+    <a href="{{ url_for('main.city',word='宜春') }}">宜春</a>、<a href="{{ url_for('main.city',word='吉安') }}">吉安</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='瑞昌') }}">瑞昌</a>、<a href="{{ url_for('main.city',word='乐平') }}">乐平</a>、<a href="{{ url_for('main.city',word='瑞金') }}">瑞金</a>、
+    <a href="{{ url_for('main.city',word='南康') }}">南康</a>、<a href="{{ url_for('main.city',word='德兴') }}">德兴</a>、<a href="{{ url_for('main.city',word='丰城') }}">丰城</a>、
+    <a href="{{ url_for('main.city',word='樟树') }}">樟树</a>、<a href="{{ url_for('main.city',word='高安') }}">高安</a>、<a href="{{ url_for('main.city',word='井冈山') }}">井冈山</a>、<a href="{{ url_for('main.city',word='贵溪') }}">贵溪</a>。<br>
+    <br>
+<h4>江苏省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='南京') }}">南京</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='徐州') }}">徐州</a>、<a href="{{ url_for('main.city',word='连云港') }}">连云港</a>、<a href="{{ url_for('main.city',word='桐城') }}">宿迁</a>、
+    <a href="{{ url_for('main.city',word='淮安') }}">淮安</a>、<a href="{{ url_for('main.city',word='盐城') }}">盐城</a>、<a href="{{ url_for('main.city',word='扬州') }}">扬州</a>、<a href="{{ url_for('main.city',word='泰州') }}">泰州</a>、
+    <a href="{{ url_for('main.city',word='南通') }}">南通</a>、<a href="{{ url_for('main.city',word='镇江') }}">镇江</a>、<a href="{{ url_for('main.city',word='常州') }}">常州</a>、
+    <a href="{{ url_for('main.city',word='无锡') }}">无锡</a>、<a href="{{ url_for('main.city',word='苏州') }}">苏州</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='江阴') }}">江阴</a>、<a href="{{ url_for('main.city',word='宜兴') }}">宜兴</a>、<a href="{{ url_for('main.city',word='邳州') }}">邳州</a>、
+    <a href="{{ url_for('main.city',word='新沂') }}">新沂</a>、<a href="{{ url_for('main.city',word='金坛') }}">金坛</a>、<a href="{{ url_for('main.city',word='溧阳') }}">溧阳</a>、
+    <a href="{{ url_for('main.city',word='常熟') }}">常熟</a>、<a href="{{ url_for('main.city',word='张家港') }}">张家港</a>、<a href="{{ url_for('main.city',word='太仓') }}">太仓</a>、
+    <a href="{{ url_for('main.city',word='昆山') }}">昆山</a>、<a href="{{ url_for('main.city',word='吴江') }}">吴江</a>、<a href="{{ url_for('main.city',word='如皋') }}">如皋</a>、
+    <a href="{{ url_for('main.city',word='通州') }}">通州</a>、<a href="{{ url_for('main.city',word='海门') }}">海门</a>、<a href="{{ url_for('main.city',word='启东') }}">启东</a>、
+    <a href="{{ url_for('main.city',word='大丰') }}">大丰</a>、<a href="{{ url_for('main.city',word='东台') }}">东台</a>、<a href="{{ url_for('main.city',word='高邮') }}">高邮</a>、
+    <a href="{{ url_for('main.city',word='仪征') }}">仪征</a>、<a href="{{ url_for('main.city',word='江都') }}">江都</a>、<a href="{{ url_for('main.city',word='扬中') }}">扬中</a>、
+    <a href="{{ url_for('main.city',word='句容') }}">句容</a>、<a href="{{ url_for('main.city',word='丹阳') }}">丹阳</a>、<a href="{{ url_for('main.city',word='兴化') }}">兴化</a>、
+    <a href="{{ url_for('main.city',word='姜堰') }}">姜堰</a>、<a href="{{ url_for('main.city',word='泰兴') }}">泰兴</a>、<a href="{{ url_for('main.city',word='靖江') }}">靖江</a>。<br>
+<br>
+<h4>辽宁省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='沈阳') }}">沈阳</a>、<a href="{{ url_for('main.city',word='大连') }}">大连</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='朝阳') }}">朝阳</a>、<a href="{{ url_for('main.city',word='阜新') }}">阜新</a>、<a href="{{ url_for('main.city',word='铁岭') }}">铁岭</a>、
+    <a href="{{ url_for('main.city',word='抚顺') }}">抚顺</a>、<a href="{{ url_for('main.city',word='本溪') }}">本溪</a>、<a href="{{ url_for('main.city',word='辽阳') }}">辽阳</a>、
+    <a href="{{ url_for('main.city',word='鞍山') }}">鞍山</a>、<a href="{{ url_for('main.city',word='丹东') }}">丹东</a>、<a href="{{ url_for('main.city',word='营口') }}">营口</a>、
+    <a href="{{ url_for('main.city',word='盘锦') }}">盘锦</a>、<a href="{{ url_for('main.city',word='锦州') }}">锦州</a>、<a href="{{ url_for('main.city',word='葫芦岛') }}">葫芦岛</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='新民') }}">新民</a>、<a href="{{ url_for('main.city',word='瓦房店') }}">瓦房店</a>、<a href="{{ url_for('main.city',word='普兰店') }}">普兰店</a>、
+    <a href="{{ url_for('main.city',word='庄河') }}">庄河</a>、<a href="{{ url_for('main.city',word='北票') }}">北票</a>、<a href="{{ url_for('main.city',word='凌源') }}">凌源</a>、<a href="{{ url_for('main.city',word='调兵山') }}">调兵山</a>、
+    <a href="{{ url_for('main.city',word='开原') }}">开原</a>、<a href="{{ url_for('main.city',word='灯塔') }}">灯塔</a>、<a href="{{ url_for('main.city',word='海城') }}">海城</a>、<a href="{{ url_for('main.city',word='凤城') }}">凤城</a>、
+    <a href="{{ url_for('main.city',word='东港') }}">东港</a>、<a href="{{ url_for('main.city',word='大石桥') }}">大石桥</a>、<a href="{{ url_for('main.city',word='盖州') }}">盖州</a>、
+    <a href="{{ url_for('main.city',word='凌海') }}">凌海</a>、<a href="{{ url_for('main.city',word='北宁') }}">北宁</a>、<a href="{{ url_for('main.city',word='兴城') }}">兴城</a>。<br>
+<br>
+<h4>山东省</h4><br>
+副省级城市： <a href="{{ url_for('main.city',word='济南') }}">济南</a>、<a href="{{ url_for('main.city',word='青岛') }}">青岛</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='聊城') }}">聊城</a>、<a href="{{ url_for('main.city',word='德州') }}">德州</a>、<a href="{{ url_for('main.city',word='东营') }}">东营</a>、
+    <a href="{{ url_for('main.city',word='淄博') }}">淄博</a>、<a href="{{ url_for('main.city',word='潍坊') }}">潍坊</a>、<a href="{{ url_for('main.city',word='烟台') }}">烟台</a>、
+    <a href="{{ url_for('main.city',word='威海') }}">威海</a>、<a href="{{ url_for('main.city',word='日照') }}">日照</a>、<a href="{{ url_for('main.city',word='临沂') }}">临沂</a>、
+    <a href="{{ url_for('main.city',word='枣庄') }}">枣庄</a>、<a href="{{ url_for('main.city',word='济宁') }}">济宁</a>、<a href="{{ url_for('main.city',word='泰安') }}">泰安</a>、
+    <a href="{{ url_for('main.city',word='莱芜') }}">莱芜</a>、<a href="{{ url_for('main.city',word='滨州') }}">滨州</a>、<a href="{{ url_for('main.city',word='菏泽') }}">菏泽</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='章丘') }}">章丘</a>、<a href="{{ url_for('main.city',word='胶州') }}">胶州</a>、<a href="{{ url_for('main.city',word='胶南') }}">胶南</a>、
+    <a href="{{ url_for('main.city',word='即墨') }}">即墨</a>、<a href="{{ url_for('main.city',word='平度') }}">平度</a>、<a href="{{ url_for('main.city',word='莱西') }}">莱西</a>、
+    <a href="{{ url_for('main.city',word='临清') }}">临清</a>、<a href="{{ url_for('main.city',word='乐陵') }}">乐陵</a>、<a href="{{ url_for('main.city',word='禹城') }}">禹城</a>、
+    <a href="{{ url_for('main.city',word='安丘') }}">安丘</a>、<a href="{{ url_for('main.city',word='昌邑') }}">昌邑</a>、<a href="{{ url_for('main.city',word='高密') }}">高密</a>、
+    <a href="{{ url_for('main.city',word='青州') }}">青州</a>、<a href="{{ url_for('main.city',word='诸城') }}">诸城</a>、<a href="{{ url_for('main.city',word='寿光') }}">寿光</a>、
+    <a href="{{ url_for('main.city',word='栖霞') }}">栖霞</a>、<a href="{{ url_for('main.city',word='海阳') }}">海阳</a>、<a href="{{ url_for('main.city',word='龙口') }}">龙口</a>、
+    <a href="{{ url_for('main.city',word='莱阳') }}">莱阳</a>、<a href="{{ url_for('main.city',word='莱州') }}">莱州</a>、<a href="{{ url_for('main.city',word='蓬莱') }}">蓬莱</a>、
+    <a href="{{ url_for('main.city',word='招远') }}">招远</a>、<a href="{{ url_for('main.city',word='文登') }}">文登</a>、<a href="{{ url_for('main.city',word='荣成') }}">荣成</a>、
+    <a href="{{ url_for('main.city',word='乳山') }}">乳山</a>、<a href="{{ url_for('main.city',word='滕州') }}">滕州</a>、<a href="{{ url_for('main.city',word='曲阜') }}">曲阜</a>、
+    <a href="{{ url_for('main.city',word='兖州') }}">兖州</a>、<a href="{{ url_for('main.city',word='邹城') }}">邹城</a>、<a href="{{ url_for('main.city',word='新泰') }}">新泰</a>、<a href="{{ url_for('main.city',word='肥城') }}">肥城</a>。<br>
+<br>
+<h4>陕西省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='西安') }}">西安</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='延安') }}">延安</a>、<a href="{{ url_for('main.city',word='铜川') }}">铜川</a>、<a href="{{ url_for('main.city',word='渭南') }}">渭南</a>、
+    <a href="{{ url_for('main.city',word='咸阳') }}">咸阳</a>、<a href="{{ url_for('main.city',word='宝鸡') }}">宝鸡</a>、<a href="{{ url_for('main.city',word='汉中') }}">汉中</a>、
+    <a href="{{ url_for('main.city',word='榆林') }}">榆林</a>、<a href="{{ url_for('main.city',word='商洛') }}">商洛</a>、<a href="{{ url_for('main.city',word='安康') }}">安康</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='韩城') }}">韩城</a>、<a href="{{ url_for('main.city',word='华阴') }}">华阴</a>、<a href="{{ url_for('main.city',word='兴平') }}">兴平</a>。<br>
+<br>
+<h4>山西省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='太原') }}">太原</a>、<a href="{{ url_for('main.city',word='大同') }}">大同</a>、<a href="{{ url_for('main.city',word='朔州') }}">朔州</a>、
+    <a href="{{ url_for('main.city',word='阳泉') }}">阳泉</a>、<a href="{{ url_for('main.city',word='长治') }}">长治</a>、<a href="{{ url_for('main.city',word='晋城') }}">晋城</a>、
+    <a href="{{ url_for('main.city',word='忻州') }}">忻州</a>、<a href="{{ url_for('main.city',word='吕梁') }}">吕梁</a>、<a href="{{ url_for('main.city',word='晋中') }}">晋中</a>、
+    <a href="{{ url_for('main.city',word='临汾') }}">临汾</a>、<a href="{{ url_for('main.city',word='运城') }}">运城</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='古交') }}">古交</a>、<a href="{{ url_for('main.city',word='潞城') }}">潞城</a>、<a href="{{ url_for('main.city',word='高平') }}">高平</a>、
+    <a href="{{ url_for('main.city',word='原平') }}">原平</a>、<a href="{{ url_for('main.city',word='孝义') }}">孝义</a>、<a href="{{ url_for('main.city',word='汾阳') }}">汾阳</a>、
+    <a href="{{ url_for('main.city',word='介休') }}">介休</a>、<a href="{{ url_for('main.city',word='侯马') }}">侯马</a>、<a href="{{ url_for('main.city',word='霍州') }}">霍州</a>、
+    <a href="{{ url_for('main.city',word='永济') }}">永济</a>、<a href="{{ url_for('main.city',word='河津') }}">河津</a><br>
+    <br>
+<h4>四川省</h4><br>
+副省级城市： <a href="{{ url_for('main.city',word='成都') }}">成都</a>。<br>
+<br>
+地级市：<a href="{{ url_for('main.city',word='广元') }}">广元</a>、<a href="{{ url_for('main.city',word='绵阳') }}">绵阳</a>、<a href="{{ url_for('main.city',word='德阳') }}">德阳</a>、
+    <a href="{{ url_for('main.city',word='南充') }}">南充</a>、<a href="{{ url_for('main.city',word='广安') }}">广安</a>、<a href="{{ url_for('main.city',word='遂宁') }}">遂宁</a>、
+    <a href="{{ url_for('main.city',word='内江') }}">内江</a>、<a href="{{ url_for('main.city',word='乐山') }}">乐山</a>、<a href="{{ url_for('main.city',word='自贡') }}">自贡</a>、
+    <a href="{{ url_for('main.city',word='泸州') }}">泸州</a>、<a href="{{ url_for('main.city',word='宜宾') }}">宜宾</a>、<a href="{{ url_for('main.city',word='攀枝花') }}">攀枝花</a>、
+    <a href="{{ url_for('main.city',word='巴中') }}">巴中</a>、<a href="{{ url_for('main.city',word='达州') }}">达州</a>、<a href="{{ url_for('main.city',word='资阳') }}">资阳</a>、
+    <a href="{{ url_for('main.city',word='眉山') }}">眉山</a>、<a href="{{ url_for('main.city',word='雅安') }}">雅安</a> 。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='崇州') }}">崇州</a>、<a href="{{ url_for('main.city',word='邛崃') }}">邛崃</a>、<a href="{{ url_for('main.city',word='都江堰') }}">都江堰</a>、
+    <a href="{{ url_for('main.city',word='彭州') }}">彭州</a>、<a href="{{ url_for('main.city',word='江油') }}">江油</a>、<a href="{{ url_for('main.city',word='什邡') }}">什邡</a>、
+    <a href="{{ url_for('main.city',word='广汉') }}">广汉</a>、<a href="{{ url_for('main.city',word='绵竹') }}">绵竹</a>、<a href="{{ url_for('main.city',word='阆中') }}">阆中</a>、
+    <a href="{{ url_for('main.city',word='华蓥') }}">华蓥</a>、<a href="{{ url_for('main.city',word='峨眉山') }}">峨眉山</a>、<a href="{{ url_for('main.city',word='万源') }}">万源</a>、
+    <a href="{{ url_for('main.city',word='简阳') }}">简阳</a>、<a href="{{ url_for('main.city',word='西昌') }}">西昌</a><br>
+    <br>
+<h4>云南省</h4><br>
+地级市：<a href="{{ url_for('main.city',word='昆明') }}">昆明</a>、<a href="{{ url_for('main.city',word='曲靖') }}">曲靖</a>、<a href="{{ url_for('main.city',word='玉溪') }}">玉溪</a>、
+    <a href="{{ url_for('main.city',word='丽江') }}">丽江</a>、<a href="{{ url_for('main.city',word='昭通') }}">昭通</a>、<a href="{{ url_for('main.city',word='思茅') }}">思茅</a>、
+    <a href="{{ url_for('main.city',word='临沧') }}">临沧</a>、<a href="{{ url_for('main.city',word='保山') }}">保山</a>。<br>
+<br>
+县级市：<a href="{{ url_for('main.city',word='安宁') }}">安宁</a>、<a href="{{ url_for('main.city',word='宣威') }}">宣威</a>、<a href="{{ url_for('main.city',word='潞西') }}">潞西</a>、
+    <a href="{{ url_for('main.city',word='瑞丽') }}">瑞丽</a>、<a href="{{ url_for('main.city',word='大理') }}">大理</a>、<a href="{{ url_for('main.city',word='楚雄') }}">楚雄</a>、
+    <a href="{{ url_for('main.city',word='个旧') }}">个旧</a>、<a href="{{ url_for('main.city',word='开远') }}">开远</a>、<a href="{{ url_for('main.city',word='景洪') }}">景洪</a>。<br>
+    <br>
+<h4>浙江省</h4><br>
+副省级城市：<a href="{{ url_for('main.city',word='杭州') }}">杭州</a>、<a href="{{ url_for('main.city',word='宁波') }}">宁波</a> 。<br>
+    <br>
+地级市：<a href="{{ url_for('main.city',word='湖州') }}">湖州</a>、<a href="{{ url_for('main.city',word='嘉兴') }}">嘉兴</a>、<a href="{{ url_for('main.city',word='舟山') }}">舟山</a>、
+    <a href="{{ url_for('main.city',word='绍兴') }}">绍兴</a>、<a href="{{ url_for('main.city',word='衢州') }}">衢州</a>、<a href="{{ url_for('main.city',word='金华') }}">金华</a>、
+    <a href="{{ url_for('main.city',word='台州') }}">台州</a>、<a href="{{ url_for('main.city',word='温州') }}">温州</a>、<a href="{{ url_for('main.city',word='丽水') }}">丽水</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='临安') }}">临安</a>、<a href="{{ url_for('main.city',word='富阳') }}">富阳</a>、<a href="{{ url_for('main.city',word='建德') }}">建德</a>、
+    <a href="{{ url_for('main.city',word='慈溪') }}">慈溪</a>、<a href="{{ url_for('main.city',word='余姚') }}">余姚</a>、<a href="{{ url_for('main.city',word='奉化') }}">奉化</a>、
+    <a href="{{ url_for('main.city',word='平湖') }}">平湖</a>、<a href="{{ url_for('main.city',word='海宁') }}">海宁</a>、<a href="{{ url_for('main.city',word='桐乡') }}">桐乡</a>、
+    <a href="{{ url_for('main.city',word='诸暨') }}">诸暨</a>、<a href="{{ url_for('main.city',word='上虞') }}">上虞</a>、<a href="{{ url_for('main.city',word='嵊州') }}">嵊州</a>、
+    <a href="{{ url_for('main.city',word='江山') }}">江山</a>、<a href="{{ url_for('main.city',word='兰溪') }}">兰溪</a>、<a href="{{ url_for('main.city',word='永康') }}">永康</a>、
+    <a href="{{ url_for('main.city',word='义乌') }}">义乌</a>、<a href="{{ url_for('main.city',word='东阳') }}">东阳</a>、<a href="{{ url_for('main.city',word='临海') }}">临海</a>、
+    <a href="{{ url_for('main.city',word='温岭') }}">温岭</a>、<a href="{{ url_for('main.city',word='瑞安') }}">瑞安</a>、<a href="{{ url_for('main.city',word='乐清') }}">乐清</a>、<a href="{{ url_for('main.city',word='龙泉') }}">龙泉</a>。<br>
+    <br>
+<h3>青海省</h3><br>
+地级市：<a href="{{ url_for('main.city',word='西宁') }}">西宁</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='格尔木') }}">格尔木</a>、<a href="{{ url_for('main.city',word='德令哈') }}">德令哈</a>。<br>
+    <br>
+    <br>
+<h3>自治区</h3><br>
+<h4>广西</h4><br>
+地级市：<a href="{{ url_for('main.city',word='南宁') }}">南宁</a>、<a href="{{ url_for('main.city',word='桂林') }}">桂林</a>、<a href="{{ url_for('main.city',word='柳州') }}">柳州</a>、
+    <a href="{{ url_for('main.city',word='梧州') }}">梧州</a>、<a href="{{ url_for('main.city',word='贵港') }}">贵港</a>、<a href="{{ url_for('main.city',word='玉林') }}">玉林</a>、
+    <a href="{{ url_for('main.city',word='钦州') }}">钦州</a>、<a href="{{ url_for('main.city',word='北海') }}">北海</a>、<a href="{{ url_for('main.city',word='防城港') }}">防城港</a>、
+    <a href="{{ url_for('main.city',word='崇左') }}">崇左</a>、<a href="{{ url_for('main.city',word='百色') }}">百色</a>、<a href="{{ url_for('main.city',word='河池') }}">河池</a>、
+    <a href="{{ url_for('main.city',word='来宾') }}">来宾</a>、<a href="{{ url_for('main.city',word='贺州') }}">贺州</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='岑溪') }}">岑溪</a>、<a href="{{ url_for('main.city',word='桂平') }}">桂平</a>、<a href="{{ url_for('main.city',word='北流') }}">北流</a>、
+    <a href="{{ url_for('main.city',word='东兴') }}">东兴</a>、<a href="{{ url_for('main.city',word='凭祥') }}">凭祥</a>、<a href="{{ url_for('main.city',word='宜州') }}">宜州</a>、<a href="{{ url_for('main.city',word='合山') }}">合山</a>。<br>
+    <br>
+<h4>内蒙古</h4><br>
+地级市：<a href="{{ url_for('main.city',word='呼和浩特') }}">呼和浩特</a>、<a href="{{ url_for('main.city',word='包头') }}">包头</a>、<a href="{{ url_for('main.city',word='乌海') }}">乌海</a>、<a href="{{ url_for('main.city',word='赤峰') }}">赤峰</a>、
+    <a href="{{ url_for('main.city',word='呼伦贝尔') }}">呼伦贝尔</a>、<a href="{{ url_for('main.city',word='通辽') }}">通辽</a>、<a href="{{ url_for('main.city',word='乌兰察布') }}">乌兰察布</a>、
+    <a href="{{ url_for('main.city',word='鄂尔多斯') }}">鄂尔多斯</a>、<a href="{{ url_for('main.city',word='巴彦淖尔') }}">巴彦淖尔</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='满洲里') }}">满洲里</a>、<a href="{{ url_for('main.city',word='扎兰屯') }}">扎兰屯</a>、<a href="{{ url_for('main.city',word='牙克石') }}">牙克石</a>、
+    <a href="{{ url_for('main.city',word='根河') }}">根河</a>、<a href="{{ url_for('main.city',word='额尔古纳') }}">额尔古纳</a>、<a href="{{ url_for('main.city',word='乌兰浩特') }}">乌兰浩特</a>、
+    <a href="{{ url_for('main.city',word='阿尔山') }}">阿尔山</a>、<a href="{{ url_for('main.city',word='霍林郭勒') }}">霍林郭勒</a>、<a href="{{ url_for('main.city',word='锡林浩特') }}">锡林浩特</a>、
+    <a href="{{ url_for('main.city',word='二连浩特') }}">二连浩特</a>、<a href="{{ url_for('main.city',word='丰镇') }}">丰镇</a>。<br>
+    <br>
+<h4>宁夏</h4><br>
+地级市：<a href="{{ url_for('main.city',word='银川') }}">银川</a>、<a href="{{ url_for('main.city',word='石嘴山') }}">石嘴山</a>、<a href="{{ url_for('main.city',word='吴忠') }}">吴忠</a>、
+    <a href="{{ url_for('main.city',word='中卫') }}">中卫</a>、<a href="{{ url_for('main.city',word='固原') }}">固原</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='灵武') }}">灵武</a>、<a href="{{ url_for('main.city',word='青铜峡') }}">青铜峡</a>。<br>
+    <br>
+<h4>西藏</h4><br>
+地级市：<a href="{{ url_for('main.city',word='拉萨') }}">拉萨</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='日喀则') }}">日喀则</a>。<br>
+    <br>
+<h4>新疆</h4><br>
+地级市：<a href="{{ url_for('main.city',word='乌鲁木齐') }}">乌鲁木齐</a>、<a href="{{ url_for('main.city',word='克拉玛依') }}">克拉玛依</a>。<br>
+    <br>
+自治区直辖县级市： <a href="{{ url_for('main.city',word='石河子') }}">石河子</a>、<a href="{{ url_for('main.city',word='阿拉尔') }}">阿拉尔</a>、<a href="{{ url_for('main.city',word='图木舒克') }}">图木舒克</a>、<a href="{{ url_for('main.city',word='五家渠') }}">五家渠</a>。<br>
+    <br>
+县级市：<a href="{{ url_for('main.city',word='喀什') }}">喀什</a>、<a href="{{ url_for('main.city',word='阿克苏') }}">阿克苏</a>、<a href="{{ url_for('main.city',word='和田') }}">和田</a>、
+    <a href="{{ url_for('main.city',word='吐鲁番') }}">吐鲁番</a>、<a href="{{ url_for('main.city',word='哈密') }}">哈密</a>、<a href="{{ url_for('main.city',word='阿图什') }}">阿图什</a>、
+    <a href="{{ url_for('main.city',word='博乐') }}">博乐</a>、<a href="{{ url_for('main.city',word='昌吉') }}">昌吉</a>、<a href="{{ url_for('main.city',word='阜康') }}">阜康</a>、
+    <a href="{{ url_for('main.city',word='米泉') }}">米泉</a>、<a href="{{ url_for('main.city',word='库尔勒') }}">库尔勒</a>、<a href="{{ url_for('main.city',word='伊宁') }}">伊宁</a>、
+    <a href="{{ url_for('main.city',word='奎屯') }}">奎屯</a>、<a href="{{ url_for('main.city',word='塔城') }}">塔城</a>、<a href="{{ url_for('main.city',word='乌苏') }}">乌苏</a>、<a href="{{ url_for('main.city',word='阿勒泰') }}">阿勒泰</a>。<br>
+    <br>
+    未完全列出，其他请搜索》》
+{% endblock %}

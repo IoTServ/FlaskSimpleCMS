@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta charset="utf-8">
+    <link rel="miphtml" href="{{ url_for('mip.miparticleDetails', id=article.id, _external=True) }}">
+    {% block meta %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>{% block stylesheet %}
+    <link rel="shortcut icon" href="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/images/favicon.ico" />
+    <link href="//cdn.bootcss.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet">
+    <link href="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/css/common.css" rel="stylesheet">{% endblock %}
+</head>
+<body>
+<header>
+    <div class='header-top' style="background-image: url('//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/images/bg.jpg')">
+        <div class="container">
+            <h1>
+               <a href="http://www.jiakaozuche.com/" title="驾考信息专家"><img src="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/images/logo.png" alt="驾考租车网Logo" width="350" height="85" /></a>
+            </h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+            {% cache 60*5 %}
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="/"><span class="glyphicon glyphicon-home"> 首页</span></a></li>
+                    <li class=""><a href="{{ url_for('main.articleTypes', id=1) }}"><span>驾校招生</span></a></li>
+                    <li class=""><a href="{{ url_for('main.articleTypes', id=2) }}"><span>教练招生</span></a></li>
+                    <li class=""><a href="{{ url_for('main.articleTypes', id=3) }}"><span>驾考租车</span></a></li>
+                    <li class=""><a href="{{ url_for('main.articleTypes', id=4) }}"><span>科二租车陪练</span></a></li>
+                    <li class=""><a href="{{ url_for('main.articleTypes', id=5) }}"><span>科三租车陪练 </span></a></li>
+                </ul>
+            {% endcache %}
+                <div class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="搜索县,区,乡镇,村,街道" id="word" value="{{ word or '' }}">
+                </div>
+                <button type="submit" class="btn btn-success" id="searchClik"  onclick="searchClick()">搜索</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+{% block Content %}
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 article">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            {% cache 60*5 %}
+                <div class="col-md-4 blog_nav">
+                    <aside>{% block blog_nav_plugin %}{% for plugin in Plugin.query.order_by(Plugin.order.asc()).all() %}{% if plugin.disabled != True %}
+                        {% if plugin.content != 'system_plugin' %}
+                            <div id="{{ plugin.title }}" class="list-group">
+                                <h5 class="list-group-item active"><strong>{{ plugin.title }}</strong></h5>
+                                <div  class="list-group-item">{{ plugin.content | safe }}</div>
+                            </div>
+                        {% else %}
+                            <div class="list-group">
+                                <p class="list-group-item active">快捷操作</p>
+                                <a href="/user/submit-articles" class="list-group-item">发布信息</a>
+                                <a href="/user/account/" class="list-group-item">管理账户</a>
+                                <a href="{{ url_for('user.sign') }}" class="list-group-item">签到</a>
+                            </div>
+                            <div class="list-group">
+                                <p class="list-group-item active">网站统计</p>
+                                <p class="list-group-item">
+                                    文章总数：<span class="badge">{{ Article.query.count() }}</span>
+                                </p>
+                            </div>
+                            <div class="list-group">
+                                <p class="list-group-item active">最热评论</p>
+                                    <!-- 畅言最新评论 start -->
+                                    <div id="cyReping" role="cylabs" data-use="reping"></div>
+                                    <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+                                    <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyt328rtp"></script>
+                                    <!-- 畅言最新评论 end -->
+                            </div>
+                            <div class="list-group">
+                                <p class="list-group-item active">热门地区</p>
+                                <p class="list-group-item">
+                                    <span><a href="{{ url_for('main.city',word='北京') }}">北京</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='上海') }}">上海</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='广州') }}">广州</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='深圳') }}">深圳</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='天津') }}">天津</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='哈尔滨') }}">哈尔滨</a></span>&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='苏州') }}">苏州</a></span>
+                                </p>
+                                <p class="list-group-item">
+                                    <span><a href="{{ url_for('main.city',word='重庆') }}">重庆</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='杭州') }}">杭州</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='武汉') }}">武汉</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='南京') }}">南京</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='成都') }}">成都</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='昆明') }}">昆明</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='青岛') }}">青岛</a></span>
+                                </p>
+                                <p class="list-group-item">
+                                    <span><a href="{{ url_for('main.city',word='大连') }}">大连</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='宁波') }}">宁波</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='无锡') }}">无锡</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='沈阳') }}">沈阳</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='济南') }}">济南</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='福州') }}">福州</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='厦门') }}">厦门</a></span>
+                                </p>
+                                <p class="list-group-item">
+                                    <span><a href="{{ url_for('main.city',word='西安') }}">西安</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='长沙') }}">长沙</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='东莞') }}">东莞</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='郑州') }}">郑州</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='佛山') }}">佛山</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='芜湖') }}">芜湖</a></span>&nbsp;&nbsp;&nbsp;
+                                    <span><a href="{{ url_for('main.city',word='合肥') }}">合肥</a></span>
+                                </p>
+                                <p class="list-group-item">
+                                    <span><a href="{{ url_for('main.place') }}" style="color: #0066CC">更多...</a></span>
+                                </p>
+                            </div>
+                        {% endif %}{% endif %}{% endfor %}{% endblock %}
+                    </aside>
+                </div>
+            {% endcache %}
+            </div>
+        </div>
+    </div>
+{% endblock %}{% cache 60*5 %}
+<footer class="footer">
+    <p class="footer-content">
+        @2017
+        <a href="/">驾考租车网</a>
+        -驾考信息查询
+    </p>
+</footer>
+<div class="btn-group-vertical floatButton">
+    <button id="goTop" class="btn btn-default" title="去顶部" type="button">
+        <span class="glyphicon glyphicon-arrow-up"></span>
+    </button>
+    <button id="refresh" class="btn btn-default" title="刷新" type="button">
+        <span class="glyphicon glyphicon-refresh"></span>
+    </button>
+    <button id="goBottom" class="btn btn-default" title="去底部" type="button">
+        <span class="glyphicon glyphicon-arrow-down"></span>
+    </button>
+</div>{% endcache %}{% block script %}
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/js/5all.js"></script>
+<script src="//jiakaozuche.oss-cn-hangzhou.aliyuncs.com/static/js/tongji.js" type="text/javascript"></script>{% endblock %}
+</body>
+</html>

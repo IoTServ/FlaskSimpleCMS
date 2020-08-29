@@ -1,0 +1,20 @@
+{% extends 'base.html' %}{% block meta %}
+    {% if page == 1 %}
+    <link rel="miphtml" href="{{ url_for('mip.miparticleTypes', id=id, _external=True) }}">
+    {% else %}
+    <link rel="miphtml" href="{{ url_for('mip.miparticleTypes', id=id, page=page, _external=True) }}">
+    {% endif %}{% endblock %}
+{% import "_macros.html" as macros %}
+{% block title %}
+    驾考租车,找驾校,驾考陪练-{{ name }}
+{% endblock %}
+{% block content %}
+    {% include "_article_entry.html" %}
+    <div class="pagination">
+    {% if endpoint == '.index' %}
+        {{ macros.pagination_widget(pagination, endpoint) }}
+    {% else %}
+        {{ macros.pagination_widget(pagination, endpoint, id=id) }}
+    {% endif %}
+    </div>
+{% endblock %}
