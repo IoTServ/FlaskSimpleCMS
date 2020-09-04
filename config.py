@@ -39,6 +39,11 @@ class Config():
     SECRET_KEY = 'secret'
     WTF_CSRF_SECRET_KEY = 'randomt@key' # for csrf protection
 
+    BUCKET_KEY = ''
+    BUCKET_VALUE = ''
+    BUCKET_URL = ''
+    BUCKET_NAME = ''
+
     @staticmethod
     def init_app(app):
         pass
